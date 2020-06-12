@@ -52,17 +52,8 @@ function copy(tbl)
 	return t
 end
 -->8
--- player
+-- queue system
 
-plyr = {
-    sp=1,
-    x=60,
-    y=60
-}
--->8
--- enemies
--->8
--- particles
 -->8
 -- init
 function _init()
@@ -70,14 +61,45 @@ function _init()
     _draw = game_draw
 end
 -->8
+-- player
+
+plyr = {
+    sp=1,
+    x=1,
+    y=1
+}
+
+function player_update()	
+	-- plyr input
+	if btnp(0) and plyr.x>0 then 
+		plyr.x-=1
+	end
+	if btnp(1) and plyr.x<15 then 
+		plyr.x+=1
+	end
+	if btnp(2) and plyr.y>0 then 
+		plyr.y-=1 
+	end
+	if btnp(3) and plyr.y<15 then 
+		plyr.y+=1 
+	end
+	if btnp(4) then end
+	if btnp(5) then end
+end
+-->8
+-- enemies
+-->8
+-- particles
+-->8
 -- menu state
 -->8
 -- game state
 function game_update()
+    player_update()
 end
 function game_draw()
     cls(2)
-    ospr(plyr.sp,0,plyr.x,plyr.y)
+    ospr(plyr.sp,0,plyr.x*8,plyr.y*8)
 end
 -->8
 -- gameover state
