@@ -1,6 +1,20 @@
 pico-8 cartridge // http://www.pico-8.com
 version 27
 __lua__
+-- utility
+-->8
+-- player
+-->8
+-- enemies
+-->8
+-- particles
+-->8
+-- menu state
+-->8
+-- game state
+-->8
+-- gameover state
+-->8
 
 __gfx__
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
